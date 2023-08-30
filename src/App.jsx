@@ -16,23 +16,25 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/drug/:id" element={<SingleDrug />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/saved" element={<Saved />} />
-        <Route path="/resetpassword" element={<ResetPassword />} />
-        <Route path="/pharmacyprofile" element={<PharmacyProfile />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/userprofile" element={<UserProfile />} />
-      </Routes>
-      <Footer />
-    </>
+    <div className="font-poppins">
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/drug/:id" element={<SingleDrug />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/pharmacyprofile" element={<PharmacyProfile />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/userprofile" element={<UserProfile />} />
+        </Routes>
+        <Footer />
+      </div>
+    </div>
   );
 };
 
