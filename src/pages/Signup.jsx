@@ -47,13 +47,16 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="container min-h-screen flex flex-col-reverse lg:flex-row">
+      <div className="min-h-screen flex flex-col-reverse lg:flex-row gap-4 lg:gap-0">
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
           <div className="flex flex-col items-center">
             <h1 className="h1 text-center text-primary">Welcome!</h1>
             <span className="text-tx-primary text-lg">Create your account</span>
           </div>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 text-lg w-full md:max-w-xl p-4"
+          >
             <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
               <div className="bg-white rounded-full p-4 text-primary">
                 <BiSolidUser />
@@ -64,10 +67,10 @@ const Signup = () => {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 name="username"
-                className="placeholder-white bg-transparent w-full focus:outline-none"
+                className="placeholder-white bg-transparent  focus:outline-none"
               />
             </div>
-            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b w-[455px] from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
+            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
               <div className="bg-white rounded-full p-4 text-primary">
                 <MdEmail />
               </div>
@@ -77,10 +80,10 @@ const Signup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
-                className="placeholder-white bg-transparent w-full focus:outline-none"
+                className="placeholder-white bg-transparent  focus:outline-none"
               />
             </div>
-            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b w-[455px] from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
+            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
               <div className="bg-white rounded-full p-4 text-primary">
                 <BiSolidLockAlt />
               </div>
@@ -90,10 +93,10 @@ const Signup = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
-                className="placeholder-white bg-transparent w-full focus:outline-none"
+                className="placeholder-white bg-transparent  focus:outline-none"
               />
             </div>
-            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b w-[455px] from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
+            <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
               <div className="bg-white rounded-full p-4 text-primary">
                 <BsTelephoneFill />
               </div>
@@ -103,7 +106,7 @@ const Signup = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 name="phone"
-                className="placeholder-white bg-transparent w-full focus:outline-none"
+                className="placeholder-white bg-transparent  focus:outline-none"
               />
             </div>
             <button
@@ -115,7 +118,7 @@ const Signup = () => {
             </button>
           </form>
           {error && <p>{error}</p>}
-          <div className="flex items-center py-2">
+          <div className="flex items-center">
             <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
             <span className="flex-shrink text-[#B8B8B8] px-2">Or</span>
             <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
@@ -130,8 +133,8 @@ const Signup = () => {
             </Link>
           </div>
         </div>
-        <div className="flex-1 bg-primary text-white flex flex-col items-center gap-8 justify-center text-center">
-          <img src="/assets/logo.svg" alt="logo" className="w-[200px]" />
+        <div className="flex-1 bg-primary text-white flex flex-col items-center gap-8 justify-center text-center px-4">
+          <img src="/assets/logo.svg" alt="logo" className="w-[140px] mt-4" />
           <h1 className="h1 hidden lg:block">
             A Pharmacy
             <br />
