@@ -22,12 +22,12 @@ const Signup = () => {
     setLoading(true);
     setError(null);
 
-    const response = await fetch("/api/auth/signup", {
+    const response = await fetch("http://127.0.0.1:8000/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, phone }),
+      body: JSON.stringify({ name: userName, email, password, phone }),
     });
     const data = await response.json();
     setLoading(false);
@@ -47,7 +47,7 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="min-h-screen flex flex-col-reverse lg:flex-row gap-4 lg:gap-0">
+      <div className="min-h-screen flex flex-col-reverse lg:flex-row gap-16 lg:gap-0">
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
           <div className="flex flex-col items-center">
             <h1 className="h1 text-center text-primary">Welcome!</h1>
@@ -67,7 +67,7 @@ const Signup = () => {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 name="username"
-                className="placeholder-white bg-transparent  focus:outline-none"
+                className="placeholder-white w-full bg-transparent  focus:outline-none"
               />
             </div>
             <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
@@ -80,7 +80,7 @@ const Signup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
-                className="placeholder-white bg-transparent  focus:outline-none"
+                className="placeholder-white w-full bg-transparent  focus:outline-none"
               />
             </div>
             <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
@@ -93,7 +93,7 @@ const Signup = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
-                className="placeholder-white bg-transparent  focus:outline-none"
+                className="placeholder-white w-full bg-transparent  focus:outline-none"
               />
             </div>
             <div className="flex items-center gap-4 px-4 py-2 rounded-[44px] bg-gradient-to-b from-[#C8B3FC] via-[#C2AEF39C] to-[#C2AEF345]">
@@ -106,7 +106,7 @@ const Signup = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 name="phone"
-                className="placeholder-white bg-transparent  focus:outline-none"
+                className="placeholder-white w-full bg-transparent  focus:outline-none"
               />
             </div>
             <button
@@ -124,7 +124,7 @@ const Signup = () => {
             <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
           </div>
           <GoogleButton />
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex items-center gap-2">
             <span className="text-[15px] text-tx-primary">
               Already have an account?
             </span>
@@ -133,14 +133,32 @@ const Signup = () => {
             </Link>
           </div>
         </div>
-        <div className="flex-1 bg-primary text-white flex flex-col items-center gap-8 justify-center text-center px-4">
-          <img src="/assets/logo.svg" alt="logo" className="w-[140px] mt-4" />
-          <h1 className="h1 hidden lg:block">
+        <div className="flex-1 lg:bg-primary text-white flex flex-col items-center gap-8 justify-center text-center px-4 relative">
+          <div className="absolute top-0 bottom-0 -left-[150px] hidden lg:block">
+            <img
+              src="/assets/wave.svg"
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute right-0 top-0 left-0 lg:hidden">
+            <img
+              src="/assets/nav-wave.svg"
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <img
+            src="/assets/logo.svg"
+            alt="logo"
+            className="w-[80px] z-10 self-start mt-2 lg:mt-0 lg:self-center"
+          />
+          <h1 className="h1 hidden lg:block z-10">
             A Pharmacy
             <br />
             for all your needs.
           </h1>
-          <p className="p hidden lg:block">
+          <p className="p hidden lg:block z-10">
             With few clicks, place your order and wait for it to be delivered.
           </p>
         </div>

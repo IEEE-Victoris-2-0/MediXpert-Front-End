@@ -100,7 +100,7 @@ const Login = () => {
               <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
             </div>
             <GoogleButton />
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center gap-2">
               <span className="text-[15px] text-tx-primary">
                 Don't have an account?
               </span>
