@@ -134,7 +134,7 @@ const Signup = () => {
           </div>
         </div>
         <div className="flex-1 lg:bg-primary text-white flex flex-col items-center gap-8 justify-center text-center px-4 relative">
-          <div className="absolute top-0 bottom-0 -left-[150px] hidden lg:block">
+          <div className="absolute top-0 bottom-0 -left-[20%] hidden lg:block">
             <img
               src="/assets/wave.svg"
               alt=""
