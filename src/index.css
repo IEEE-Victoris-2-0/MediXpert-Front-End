@@ -19,3 +19,7 @@
 .p {
   @apply text-xl lg:text-2xl font-semibold;
 }
+
+body {
+  background-color: #f6f2ff;
+}

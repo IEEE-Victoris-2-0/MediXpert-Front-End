@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <div className="min-h-screen">
         <div className=" bg-primary flex justify-center h-[16vh] lg:justify-end">
           <img src="/assets/logo.svg" alt="logo" className="w-[140px] mt-4" />

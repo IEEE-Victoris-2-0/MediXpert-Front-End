@@ -22,19 +22,21 @@ const Signup = () => {
     setLoading(true);
     setError(null);
 
-    const response = await fetch("http://127.0.0.1:8000/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name: userName, email, password, phone }),
-    });
+    const response = await fetch(
+      "https://medixpert.000webhostapp.com/api/register",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ name: userName, email, password, phone }),
+      }
+    );
     const data = await response.json();
     setLoading(false);
 
     if (!response.ok) {
-      setLoading(false);
-      setError(data.message);
+      console.log(data);
       return;
     }
 
@@ -46,7 +48,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <div className="min-h-screen flex flex-col-reverse lg:flex-row gap-16 lg:gap-0">
         <div className="flex-1 flex flex-col gap-4 justify-center items-center">
           <div className="flex flex-col items-center">

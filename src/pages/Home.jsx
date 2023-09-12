@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import OurCategories from "../components/OurCategories";
+import DrugsGrid from "../components/DrugsGrid";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Navbar />
       <Search />
       <OurCategories />
+      <DrugsGrid />
     </div>
   );
 };

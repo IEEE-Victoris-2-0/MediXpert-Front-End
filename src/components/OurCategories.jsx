@@ -1,25 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ourCategories = [
   {
     id: 1,
     name: "Medicine",
-    image: "/assets/medicine.svg",
+    slug: "medicine",
+    image: "/assets/medicine.png",
   },
   {
     id: 2,
     name: "Vitamins",
-    image: "/assets/vitamins.svg",
+    slug: "vitamins",
+    image: "/assets/vitamins.png",
   },
   {
     id: 3,
-    name: "Moms & Babies",
-    image: "/assets/moms-babies.svg",
+    name: "Mom & Baby",
+    slug: "mom-baby",
+    image: "/assets/moms-babies.png",
   },
   {
     id: 4,
     name: "Fitness & Diet",
-    image: "/assets/fitness-nutrition.svg",
+    slug: "fitness-diet",
+    image: "/assets/fitness-nutrition.png",
   },
 ];
 
@@ -31,27 +36,33 @@ const OurCategories = () => {
           <h2 className="h2">Our Categories</h2>
         </div>
         <div
-          className="
-            grid
-            grid-cols-2
-            md:grid-cols-4
+          className="grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-4
             gap-8
             "
         >
           {ourCategories.map((category) => (
-            <div
+            <Link
+              to={`/category/${category.slug}`}
               key={category.id}
-              className="bg-[#CFC4E7] aspect-square rounded-lg py-8 px-4 flex flex-col justify-center items-center gap-8"
+              className="hover:scale-105 transition-all duration-300"
             >
-              <div className="overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-40 h-40 object-contain"
-                />
+              <div
+                key={category.id}
+                className="bg-[#CFC4E7] h-72 max-w-72 rounded-lg py-8 px-4 flex flex-col justify-center items-center gap-8"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-40 h-40 object-contain"
+                  />
+                </div>
+                <h3 className="h3">{category.name}</h3>
               </div>
-              <h3 className="h3">{category.name}</h3>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
