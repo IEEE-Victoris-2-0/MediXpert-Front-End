@@ -11,7 +11,7 @@ const Search = () => {
             <br />
             Delivery, For <br /> Your Health
           </h1>
-          <div className="bg-[#C2AEF39C] rounded-[32px] flex items-center justify-between gap-2 p-4 w-full lg:max-w-lg">
+          <div className="bg-[#C2AEF39C] rounded-xl flex items-center justify-between gap-2 p-4 w-full lg:max-w-lg">
             <input
               type="text"
               placeholder="Search"

@@ -9,8 +9,12 @@ const Navbar = () => {
   return (
     <nav className="bg-primary py-4 text-white">
       <div className="container flex items-center justify-between">
-        <NavLink to="/">
-          <img src="/assets/logo.svg" alt="logo" className="w-28" />
+        <NavLink to="/" className="w-20 h-20">
+          <img
+            src="/assets/logo.svg"
+            alt="logo"
+            className="w-full h-full object-contain"
+          />
         </NavLink>
         <ul className="flex items-center gap-4 font-semibold">
           <NavLink className="flex gap-2 items-center" to="/location">

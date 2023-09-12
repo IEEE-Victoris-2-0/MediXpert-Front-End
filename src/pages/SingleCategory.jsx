@@ -13,7 +13,7 @@ const SingleCategory = () => {
           <h1 className="h1 bg-gradient-to-b from-[#7642F9]  to-[#C8B3FC] text-transparent bg-clip-text text-center lg:text-start">
             Medicine
           </h1>
-          <div className="bg-[#C2AEF39C] rounded-[32px] flex items-center justify-between gap-2 p-4 w-full lg:max-w-lg">
+          <div className="bg-[#C2AEF39C] rounded-xl flex items-center justify-between gap-2 p-4 w-full lg:max-w-lg">
             <input
               type="text"
               placeholder="Search"

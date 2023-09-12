@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineArrowRight } from "react-icons/ai";
 
 const DrugCard = () => {
   return (
-    <div className="bg-white flex flex-col h-72 max-w-72 p-4 rounded-lg relative overflow-hidden">
+    <div className="bg-white flex flex-col w-full h-full aspect-square p-4 rounded-lg relative overflow-hidden">
       <div className="absolute top-0 right-0 bg-[#FF9090] p-2 rounded-es-lg cursor-pointer">
         <AiFillHeart className="text-3xl text-white" />
       </div>

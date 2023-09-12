@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { Routes, Route } from "react-router-dom";
 import SingleCategory from "./pages/SingleCategory";
+import CallDr from "./pages/CallDr";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/category/:category" element={<SingleCategory />} />
+        <Route path="/call-dr" element={<CallDr />} />
       </Routes>
     </div>
   );

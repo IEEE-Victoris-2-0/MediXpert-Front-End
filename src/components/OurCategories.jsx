@@ -40,6 +40,8 @@ const OurCategories = () => {
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-4
+          justify-items-center
+          align-items-center
             gap-8
             "
         >
@@ -47,11 +49,11 @@ const OurCategories = () => {
             <Link
               to={`/category/${category.slug}`}
               key={category.id}
-              className="hover:scale-105 transition-all duration-300"
+              className="hover:scale-105 transition-all duration-300 w-full h-full aspect-square"
             >
               <div
                 key={category.id}
-                className="bg-[#CFC4E7] h-72 max-w-72 rounded-lg py-8 px-4 flex flex-col justify-center items-center gap-8"
+                className="bg-[#CFC4E7] rounded-lg p-4 flex flex-col w-full h-full justify-center items-center gap-8"
               >
                 <div className="overflow-hidden">
                   <img
