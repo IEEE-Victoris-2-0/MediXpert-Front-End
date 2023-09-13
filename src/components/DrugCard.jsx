@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillHeart, AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const DrugCard = () => {
   return (
@@ -17,9 +18,12 @@ const DrugCard = () => {
       <span>Panadol Extra</span>
       <div className="flex justify-between items-center">
         <span className="text-[#FF9090]">EGP67.50</span>
-        <div className="bg-[#FF9090] p-2 rounded-full">
+        <Link
+          to="/drug/panadol-extra"
+          className="bg-[#FF9090] p-2 rounded-full"
+        >
           <AiOutlineArrowRight className="text-white text-2xl" />
-        </div>
+        </Link>
       </div>
     </div>
   );
