@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className="bg-white">
       <div className="min-h-screen flex flex-col gap-4 lg:block">
-        <div className=" bg-primary flex justify-center h-[16vh] lg:justify-end px-[2rem]">
+        <div className=" bg-primary flex justify-center h-[16vh] lg:justify-start px-[2rem]">
           <img src="/assets/logo.svg" alt="logo" className="w-20 mt-4" />
         </div>
         <div className="flex h-[84vh]">

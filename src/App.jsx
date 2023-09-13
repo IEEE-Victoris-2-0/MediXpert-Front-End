@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import SingleCategory from "./pages/SingleCategory";
 import SingleDrug from "./pages/SingleDrug";
 import CallDr from "./pages/CallDr";
+import PharmacyProfile from "./pages/PharmacyProfile";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/category/:category" element={<SingleCategory />} />
         <Route path="/call-dr" element={<CallDr />} />
         <Route path="/drug/:drug" element={<SingleDrug />} />
+        <Route path="/pharmacy/:pharmacy" element={<PharmacyProfile />} />
       </Routes>
     </div>
   );

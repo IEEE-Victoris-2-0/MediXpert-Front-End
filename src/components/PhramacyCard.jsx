@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PhramacyCard = () => {
   return (
-    <div className="bg-white flex justify-center w-full h-full aspect-square items-center p-4 rounded-lg relative overflow-hidden">
+    <Link
+      to="/pharmacy/phara-nece"
+      className="bg-white flex justify-center w-full h-full aspect-square items-center p-4 rounded-lg relative overflow-hidden hover:scale-105 transition-all duration-300"
+    >
       <div className="bg-[#C2AEF39C] w-full h-full rounded-lg p-4 flex flex-col gap-2 items-center justify-center">
         <div className="overflow-hidden flex justify-center w-full h-full items-center">
           <img
@@ -17,7 +21,7 @@ const PhramacyCard = () => {
           <span>4.3</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

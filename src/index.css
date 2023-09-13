@@ -17,7 +17,7 @@
 }
 
 .p {
-  @apply text-xl lg:text-2xl font-semibold;
+  @apply text-xl lg:text-2xl font-medium;
 }
 
 body {
