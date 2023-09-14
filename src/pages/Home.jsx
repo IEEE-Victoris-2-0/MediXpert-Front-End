@@ -10,7 +10,7 @@ const Home = () => {
       <Navbar />
       <Search />
       <OurCategories />
-      <DrugsGrid />
+      <DrugsGrid title={"Most Searched"} />
     </div>
   );
 };

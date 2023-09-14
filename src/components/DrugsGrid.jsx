@@ -1,12 +1,12 @@
 import React from "react";
 import DrugCard from "./DrugCard";
 
-const DrugsGrid = () => {
+const DrugsGrid = ({ title }) => {
   return (
     <div>
       <div className="container flex flex-col gap-16 py-16">
         <div>
-          <h2 className="h2">Most Searched</h2>
+          <h2 className="h2">{title}</h2>
         </div>
         <div
           className="grid

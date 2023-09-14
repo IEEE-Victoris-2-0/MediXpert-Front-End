@@ -34,7 +34,7 @@ const PharmacyProfile = () => {
             <h2 className="p">
               Pharmacy Reviews <span className="text-primary">(4)</span>
             </h2>
-            <ul className="flex flex-col gap-2 overflow-y-scroll max-h-[50vh] p-4">
+            <ul className="flex flex-col gap-2 overflow-y-scroll max-h-[50vh] pr-4">
               <li className="bg-primary p-4 rounded-lg text-white">
                 <div className="flex justify-between items-center">
                   <h3 className="h3">Amr Mustafa</h3>

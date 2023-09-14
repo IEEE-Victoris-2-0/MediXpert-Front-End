@@ -9,7 +9,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <nav className="bg-primary py-4 text-white">
+    <nav className="bg-primary py-4 text-white text-lg">
       <div className="container flex items-center justify-between">
         <NavLink to="/" className="w-20 h-20">
           <img

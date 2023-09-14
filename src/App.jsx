@@ -7,6 +7,8 @@ import SingleCategory from "./pages/SingleCategory";
 import SingleDrug from "./pages/SingleDrug";
 import CallDr from "./pages/CallDr";
 import PharmacyProfile from "./pages/PharmacyProfile";
+import Favorites from "./pages/Favorites";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/call-dr" element={<CallDr />} />
         <Route path="/drug/:drug" element={<SingleDrug />} />
         <Route path="/pharmacy/:pharmacy" element={<PharmacyProfile />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

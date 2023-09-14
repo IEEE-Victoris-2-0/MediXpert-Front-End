@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const DrugCard = () => {
   return (
-    <div className="bg-white flex flex-col w-full h-full aspect-square p-4 rounded-lg relative overflow-hidden">
+    <div className="bg-white flex flex-col justify-center w-full h-full aspect-square p-4 rounded-lg relative overflow-hidden">
       <div className="absolute top-0 right-0 bg-[#FF9090] p-2 rounded-es-lg cursor-pointer">
         <AiFillHeart className="text-3xl text-white" />
       </div>
-      <div className="overflow-hidden flex justify-center items-center">
+      <div className="overflow-hidden flex justify-center w-full h-full items-center">
         <img
           src="/assets/pandol.png"
           alt=""
-          className="w-[80%] h-[80%] object-contain"
+          className="w-[60%] h-[60%] object-contain"
         />
       </div>
       <span>Panadol Extra</span>
