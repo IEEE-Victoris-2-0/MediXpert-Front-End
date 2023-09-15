@@ -45,7 +45,7 @@ const Signup = () => {
 
     if (response.ok) {
       localStorage.setItem("user", JSON.stringify(data.data.token));
-      setUser(data.data.user);
+      setUser(data.data);
       toast.success("Signed up successfully");
     }
   };

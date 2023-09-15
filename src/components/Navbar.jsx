@@ -4,9 +4,13 @@ import { FaUserAlt } from "react-icons/fa";
 import { BsFillTelephoneFill, BsFillCartFill } from "react-icons/bs";
 import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
+import { AuthContext } from "../contexts/auth";
+import { useContext } from "react";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const { setUser } = useContext(AuthContext);
 
   return (
     <nav className="bg-primary py-4 text-white text-lg">
@@ -35,9 +39,15 @@ const Navbar = () => {
             <BsFillCartFill />
             <span>Cart</span>
           </NavLink>
-          <NavLink className="flex gap-2 items-center" to="/login">
+          <NavLink
+            className="flex gap-2 items-center"
+            onClick={() => {
+              localStorage.removeItem("user");
+              setUser(null);
+            }}
+          >
             <FaUserAlt />
-            <span>Login</span>
+            <span>Logout</span>
           </NavLink>
         </ul>
         <div
@@ -47,7 +57,10 @@ const Navbar = () => {
           <AiOutlineMenu className="text-3xl" />
         </div>
         {showMenu && (
-          <div className="fixed inset-0 bg-primary bg-opacity-90 flex flex-col items-center justify-center">
+          <div
+            className="fixed inset-0 bg-primary bg-opacity-90 flex flex-col items-center justify-center"
+            onClick={() => setShowMenu((prev) => !prev)}
+          >
             <ul className="flex flex-col gap-4">
               <NavLink className="flex gap-2 items-center" to="/location">
                 <MdLocationPin />
@@ -65,9 +78,15 @@ const Navbar = () => {
                 <BsFillCartFill />
                 <span>Cart</span>
               </NavLink>
-              <NavLink className="flex gap-2 items-center" to="/login">
+              <NavLink
+                className="flex gap-2 items-center"
+                onClick={() => {
+                  localStorage.removeItem("user");
+                  setUser(null);
+                }}
+              >
                 <FaUserAlt />
-                <span>Login</span>
+                <span>Logout</span>
               </NavLink>
             </ul>
           </div>
