@@ -5,13 +5,13 @@ import { BiSolidUser, BiSolidLockAlt } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import GoogleButton from "react-google-button";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { setUser } = useContext(AuthContext);
@@ -20,30 +20,33 @@ const Signup = () => {
     e.preventDefault();
 
     setLoading(true);
-    setError(null);
 
     const response = await fetch(
-      "https://medixpert.000webhostapp.com/api/register",
+      "https://shootingstars.puiux.org/api/register",
       {
         method: "POST",
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: userName, email, password, phone }),
+        body: JSON.stringify({ name: userName, email, phone, password }),
       }
     );
     const data = await response.json();
+
+    console.log(data);
+
     setLoading(false);
 
     if (!response.ok) {
-      console.log(data);
+      toast.error(data.message);
       return;
     }
 
     if (response.ok) {
-      localStorage.setItem("user", JSON.stringify(data));
-      setUser(data);
-      setLoading(false);
+      localStorage.setItem("user", JSON.stringify(data.data.token));
+      setUser(data.data.user);
+      toast.success("Signed up successfully");
     }
   };
 
@@ -116,10 +119,9 @@ const Signup = () => {
               disabled={loading}
               className="bg-gradient-to-b from-[#7642F9] to-[#C8B3FC] text-white py-3 px-4 rounded-[44px] w-1/3 self-center"
             >
-              Sign up
+              {loading ? "Loading..." : "Sign Up"}
             </button>
           </form>
-          {error && <p>{error}</p>}
           <div className="flex items-center">
             <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
             <span className="flex-shrink text-[#B8B8B8] px-2">Or</span>

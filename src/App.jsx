@@ -9,20 +9,49 @@ import CallDr from "./pages/CallDr";
 import PharmacyProfile from "./pages/PharmacyProfile";
 import Favorites from "./pages/Favorites";
 import Cart from "./pages/Cart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "./contexts/auth";
+import { useContext } from "react";
 
 const App = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="font-poppins overflow-hidden">
+      <ToastContainer />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/category/:category" element={<SingleCategory />} />
-        <Route path="/call-dr" element={<CallDr />} />
-        <Route path="/drug/:drug" element={<SingleDrug />} />
-        <Route path="/pharmacy/:pharmacy" element={<PharmacyProfile />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+        <Route
+          path="/signup"
+          element={user ? <Navigate to="/" /> : <Signup />}
+        />
+        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+        <Route
+          path="/category/:category"
+          element={user ? <SingleCategory /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/call-dr"
+          element={user ? <CallDr /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/drug/:drug"
+          element={user ? <SingleDrug /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/pharmacy/:pharmacy"
+          element={user ? <PharmacyProfile /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/favorites"
+          element={user ? <Favorites /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/cart"
+          element={user ? <Cart /> : <Navigate to="/login" />}
+        />
       </Routes>
     </div>
   );

@@ -4,25 +4,24 @@ import { BiSolidLockAlt } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import GoogleButton from "react-google-button";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { setUser } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
-    setError(null);
 
-    const response = await fetch("/api/auth/signup", {
+    const response = await fetch("https://shootingstars.puiux.org/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify({ email, password }),
     });
@@ -30,14 +29,15 @@ const Login = () => {
 
     if (!response.ok) {
       setLoading(false);
-      setError(data.message);
+      toast.error(data.message);
       return;
     }
 
     if (response.ok) {
-      localStorage.setItem("user", JSON.stringify(data));
-      setUser(data);
+      localStorage.setItem("user", JSON.stringify(data.data.token));
+      setUser(data.data.user);
       setLoading(false);
+      toast.success("Logged in successfully");
     }
   };
 
@@ -90,10 +90,9 @@ const Login = () => {
                 disabled={loading}
                 className="bg-gradient-to-b from-[#7642F9] to-[#C8B3FC] text-white py-3 px-4 rounded-[44px] w-1/3 self-center"
               >
-                Sign in
+                {loading ? "Loading..." : "Login"}
               </button>
             </form>
-            {error && <p>{error}</p>}
             <div className="flex items-center py-2">
               <div className="w-[137px] h-px bg-[#B8B8B8]"></div>
               <span className="flex-shrink text-[#B8B8B8] px-2">Or</span>
