@@ -25,47 +25,55 @@ const Cart = () => {
           <div className="flex flex-col gap-4">
             <h2 className="h2 text-primary">Your Cart</h2>
             <ul className="flex flex-col gap-4">
-              {cartItems.map((item) => (
-                <li
-                  className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between"
-                  key={item.id}
-                >
-                  <div className="flex justify-center items-center w-[20%]">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="h3">{item.name}</h3>
-                    <span className="text-sm lg:text-lg">{item.price} LE</span>
-                  </div>
-                  <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                    <span
-                      className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
-                      onClick={() => addItemToCart(item)}
-                    >
-                      +
-                    </span>
-                    <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                      {item.quantity}
-                    </span>
-                    <span
-                      className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
-                      onClick={() => decreaseItemQuantity(item)}
-                    >
-                      -
-                    </span>
-                  </div>
-                  <div className="cursor-pointer">
-                    <AiOutlineClose
-                      className="text-2xl text-primary"
-                      onClick={() => removeItemFromCart(item)}
-                    />
-                  </div>
-                </li>
-              ))}
+              {cartItems.length > 0 ? (
+                cartItems.map((item) => (
+                  <li
+                    className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between"
+                    key={item.id}
+                  >
+                    <div className="flex justify-center items-center w-[20%]">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="h3">{item.name}</h3>
+                      <span className="text-sm lg:text-lg">
+                        {item.price} LE
+                      </span>
+                    </div>
+                    <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
+                      <span
+                        className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
+                        onClick={() => addItemToCart(item)}
+                      >
+                        +
+                      </span>
+                      <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
+                        {item.quantity}
+                      </span>
+                      <span
+                        className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
+                        onClick={() => decreaseItemQuantity(item)}
+                      >
+                        -
+                      </span>
+                    </div>
+                    <div className="cursor-pointer">
+                      <AiOutlineClose
+                        className="text-2xl text-primary"
+                        onClick={() => removeItemFromCart(item)}
+                      />
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <h2 className="h2 text-black">
+                  Your cart is empty, start shopping!
+                </h2>
+              )}
             </ul>
           </div>
         </div>

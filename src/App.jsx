@@ -44,6 +44,7 @@ const App = () => {
           path="/pharmacy/:pharmacy"
           element={user ? <PharmacyProfile /> : <Navigate to="/login" />}
         />
+
         <Route
           path="/favorites"
           element={user ? <Favorites /> : <Navigate to="/login" />}

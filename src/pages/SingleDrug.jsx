@@ -31,13 +31,7 @@ const SingleDrug = () => {
               : drugData.name}
           </h2>
           <h3 className="text-[#FF9090] h3">EGP {drugData.price}</h3>
-          <p className="text-sm lg:text-xl">
-            Reduction of elevated intraocular pressure (IOP) in patients with
-            open-angle glaucoma or ocular hypertension who are insufficiently
-            responsive to topical beta-blockers or prostaglandin analogs, Side
-            effects : Eye burning, irritation, blurred vision, itching or
-            corneal erosionEyelid irritation or inflammation.
-          </p>
+          <p className="text-sm lg:text-xl">{drugData.desc}</p>
           <div className="text-white text-sm lg:text-lg flex gap-2">
             <button
               className="bg-primary px-4 py-2 rounded-lg"

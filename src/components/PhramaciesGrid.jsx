@@ -1,5 +1,6 @@
 import React from "react";
 import PhramacyCard from "./PhramacyCard";
+import { PHARMACIES_DATA } from "../data/pharmacies";
 
 const PhramaciesGrid = () => {
   return (
@@ -15,8 +16,8 @@ const PhramaciesGrid = () => {
           lg:grid-cols-4
             gap-8"
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((drug) => (
-            <PhramacyCard key={drug.id} />
+          {PHARMACIES_DATA.map((pharmacy) => (
+            <PhramacyCard key={pharmacy.id} pharmacy={pharmacy} />
           ))}
         </div>
       </div>
