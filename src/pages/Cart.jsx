@@ -1,8 +1,22 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { AiOutlineClose } from "react-icons/ai";
+import { CartContext } from "../contexts/cart";
+import { useContext } from "react";
+import { useState } from "react";
 
 const Cart = () => {
+  const {
+    cartItems,
+    addItemToCart,
+    decreaseItemQuantity,
+    removeItemFromCart,
+    applyCoupon,
+    cartTotal,
+  } = useContext(CartContext);
+
+  const [coupon, setCoupon] = useState("");
+
   return (
     <div>
       <Navbar />
@@ -11,141 +25,47 @@ const Cart = () => {
           <div className="flex flex-col gap-4">
             <h2 className="h2 text-primary">Your Cart</h2>
             <ul className="flex flex-col gap-4">
-              <li className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between">
-                <div className="flex justify-center items-center w-[20%]">
-                  <img
-                    src="/assets/pandol.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="h3">Pandol Extra</h3>
-                  <span className="text-sm lg:text-lg">10 LE</span>
-                </div>
-                <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                  <span className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    +
-                  </span>
-                  <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                    1
-                  </span>
-                  <span className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    -
-                  </span>
-                </div>
-                <div className="cursor-pointer">
-                  <AiOutlineClose className="text-2xl text-primary" />
-                </div>
-              </li>
-              <li className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between">
-                <div className="flex justify-center items-center w-[20%]">
-                  <img
-                    src="/assets/pandol.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="h3">Pandol Extra</h3>
-                  <span className="text-sm lg:text-lg">10 LE</span>
-                </div>
-                <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                  <span className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    +
-                  </span>
-                  <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                    1
-                  </span>
-                  <span className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    -
-                  </span>
-                </div>
-                <div className="cursor-pointer">
-                  <AiOutlineClose className="text-2xl text-primary" />
-                </div>
-              </li>
-              <li className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between">
-                <div className="flex justify-center items-center w-[20%]">
-                  <img
-                    src="/assets/pandol.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="h3">Pandol Extra</h3>
-                  <span className="text-sm lg:text-lg">10 LE</span>
-                </div>
-                <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                  <span className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    +
-                  </span>
-                  <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                    1
-                  </span>
-                  <span className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    -
-                  </span>
-                </div>
-                <div className="cursor-pointer">
-                  <AiOutlineClose className="text-2xl text-primary" />
-                </div>
-              </li>
-              <li className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between">
-                <div className="flex justify-center items-center w-[20%]">
-                  <img
-                    src="/assets/pandol.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="h3">Pandol Extra</h3>
-                  <span className="text-sm lg:text-lg">10 LE</span>
-                </div>
-                <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                  <span className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    +
-                  </span>
-                  <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                    1
-                  </span>
-                  <span className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    -
-                  </span>
-                </div>
-                <div className="cursor-pointer">
-                  <AiOutlineClose className="text-2xl text-primary" />
-                </div>
-              </li>
-              <li className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between">
-                <div className="flex justify-center items-center w-[20%]">
-                  <img
-                    src="/assets/pandol.png"
-                    alt=""
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <h3 className="h3">Pandol Extra</h3>
-                  <span className="text-sm lg:text-lg">10 LE</span>
-                </div>
-                <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
-                  <span className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    +
-                  </span>
-                  <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
-                    1
-                  </span>
-                  <span className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer">
-                    -
-                  </span>
-                </div>
-                <div className="cursor-pointer">
-                  <AiOutlineClose className="text-2xl text-primary" />
-                </div>
-              </li>
+              {cartItems.map((item) => (
+                <li
+                  className="bg-white p-4 rounded-lg shadow-md text-primary flex justify-between"
+                  key={item.id}
+                >
+                  <div className="flex justify-center items-center w-[20%]">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="h3">{item.name}</h3>
+                    <span className="text-sm lg:text-lg">{item.price} LE</span>
+                  </div>
+                  <div className=" flex flex-col justify-between bg-[#D8C9FF] rounded-lg">
+                    <span
+                      className="bg-primary text-white  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
+                      onClick={() => addItemToCart(item)}
+                    >
+                      +
+                    </span>
+                    <span className=" h-10 w-10 rounded-lg flex justify-center items-center">
+                      {item.quantity}
+                    </span>
+                    <span
+                      className="bg-[#C6AEFF]  h-10 w-10 rounded-lg flex justify-center items-center cursor-pointer"
+                      onClick={() => decreaseItemQuantity(item)}
+                    >
+                      -
+                    </span>
+                  </div>
+                  <div className="cursor-pointer">
+                    <AiOutlineClose
+                      className="text-2xl text-primary"
+                      onClick={() => removeItemFromCart(item)}
+                    />
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -156,12 +76,19 @@ const Cart = () => {
               type="text"
               placeholder="Enter Discount Code"
               className="w-full bg-transparent py-2 hover:outline-none focus:outline-none placeholder-[#C8B3FC]"
+              value={coupon}
+              onChange={(e) => setCoupon(e.target.value)}
             />
-            <span>Apply</span>
+            <span
+              onClick={() => applyCoupon(coupon)}
+              className="cursor-pointer"
+            >
+              Apply
+            </span>
           </div>
           <div className="flex justify-between items-center">
             <span>Subtotal</span>
-            <span>EGP 100</span>
+            <span>EGP {cartTotal}</span>
           </div>
           <div className="flex justify-between items-center">
             <span>Delivery</span>
@@ -170,7 +97,7 @@ const Cart = () => {
           <div className="h-px w-full bg-primary"></div>
           <div className="flex justify-between items-center">
             <span>Total</span>
-            <span className="font-semibold">EGP 100</span>
+            <span className="font-semibold">EGP {cartTotal}</span>
           </div>
           <button
             type="submit"

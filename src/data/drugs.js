@@ -1,0 +1,51 @@
+export const DRUGS_DATA = [
+  {
+    id: 1,
+    name: "twinzol 30 single dose eye drops",
+    slug: "twinzol-30-single-dose-eye-drops",
+    price: 67.5,
+    image: "/assets/drugs/1.png",
+  },
+  {
+    id: 2,
+    name: "Panadol Extra",
+    slug: "panadol-extra",
+    price: 190,
+    image: "/assets/drugs/5.png",
+  },
+  {
+    id: 3,
+    name: "Centrum with Lutein 30 Tablets",
+    slug: "centrum-with-lutein-30-tablets",
+    price: 200,
+    image: "/assets/drugs/3.png",
+  },
+  {
+    id: 4,
+    name: "Bubbles Classic",
+    slug: "bubbles-classic",
+    price: 200,
+    image: "/assets/drugs/6.png",
+  },
+  {
+    id: 5,
+    name: "Accurate digital body scale",
+    slug: "accurate-digital-body-scale",
+    price: 400,
+    image: "/assets/drugs/7.png",
+  },
+  {
+    id: 6,
+    name: "Macro Orovex",
+    slug: "macro-orovex",
+    price: 120,
+    image: "/assets/drugs/2.png",
+  },
+  {
+    id: 7,
+    name: "Amoxil Forte 250mg",
+    slug: "amoxil-forte-250mg",
+    price: 180,
+    image: "/assets/drugs/4.png",
+  },
+];

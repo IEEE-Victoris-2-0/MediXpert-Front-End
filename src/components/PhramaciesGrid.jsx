@@ -15,8 +15,8 @@ const PhramaciesGrid = () => {
           lg:grid-cols-4
             gap-8"
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((drug, index) => (
-            <PhramacyCard key={index} />
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((drug) => (
+            <PhramacyCard key={drug.id} />
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillHeart, AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const DrugCard = () => {
+const DrugCard = ({ drug }) => {
   return (
     <div className="bg-white flex flex-col justify-center w-full h-full aspect-square p-4 rounded-lg relative overflow-hidden">
       <div className="absolute top-0 right-0 bg-[#FF9090] p-2 rounded-es-lg cursor-pointer">
@@ -10,16 +10,18 @@ const DrugCard = () => {
       </div>
       <div className="overflow-hidden flex justify-center w-full h-full items-center">
         <img
-          src="/assets/pandol.png"
-          alt=""
+          src={drug.image}
+          alt={drug.name}
           className="w-[60%] h-[60%] object-contain"
         />
       </div>
-      <span>Panadol Extra</span>
+      <span>
+        {drug.name.length > 20 ? drug.name.slice(0, 20) + "..." : drug.name}
+      </span>
       <div className="flex justify-between items-center">
-        <span className="text-[#FF9090]">EGP67.50</span>
+        <span className="text-[#FF9090]">EGP {drug.price}</span>
         <Link
-          to="/drug/panadol-extra"
+          to={`/drug/${drug.slug}`}
           className="bg-[#FF9090] p-2 rounded-full"
         >
           <AiOutlineArrowRight className="text-white text-2xl" />
