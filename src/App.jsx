@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Navigate } from "react-router-dom";
 import { AuthContext } from "./contexts/auth";
 import { useContext } from "react";
+import Map from "./pages/Map";
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -48,6 +49,10 @@ const App = () => {
         <Route
           path="/favorites"
           element={user ? <Favorites /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/location"
+          element={user ? <Map /> : <Navigate to="/login" />}
         />
         <Route
           path="/cart"
